@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between h-screen flex-col px-20 py-10">
+    <nav className="hidden md:flex justify-between flex-1 max-w-40 flex-col  md:visible">
       <div>
         <h1 className="text-5xl font-black font-sans">
           LC
@@ -37,11 +37,11 @@ export default function Navbar() {
       </ul>
 
       <div className='flex flex-col gap-2'>
-        <h1 className="font-sans font-semibold text-xl ">
+        <h1 className="font-sans font-semibold lg:text-xl md:text-lg ">
           {isDarkMode ? "Sycho Mode" : "Best Mode"}
         </h1>
         <Switch checked={isDarkMode} onCheckedChange={toggleDarkMode} />
-        <div>
+        <div className='md:text-sm lg:text-base'>
           <p>a.k.a.</p>
           <p>{isDarkMode ? "light mode" : "dark mode"}</p>
 
