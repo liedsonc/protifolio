@@ -14,6 +14,11 @@ export default function Navbar() {
     document.documentElement.classList.toggle('dark');
   };
 
+  const playSound = () => {
+    const audio = new Audio("/click.mp3");
+    audio.play();
+  };
+
   return (
     <nav className="hidden md:flex justify-between flex-1 max-w-40 flex-col  md:visible">
       <div>
@@ -22,16 +27,16 @@ export default function Navbar() {
         </h1>
       </div>
       <ul className='flex flex-col font-light text-base font-sans gap-5'>
-        <Link className={`hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/' ? 'text-xl font-semibold' : ''}`} href='/'>
+        <Link onMouseEnter={playSound} className={`hover:ml-1 hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/' ? 'text-xl font-semibold' : ''}`} href='/'>
           Home
         </Link>
-        <Link className={`hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/about' ? 'text-xl font-semibold' : ''}`} href='/about'>
+        <Link onMouseEnter={playSound} className={`hover:ml-1 hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/about' ? 'text-xl font-semibold' : ''}`} href='/about'>
           About me
         </Link>
-        <Link className={`hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/projects' ? 'text-xl font-semibold' : ''}`} href='/projects'>
+        <Link onMouseEnter={playSound} className={`hover:ml-1 hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/projects' ? 'text-xl font-semibold' : ''}`} href='/projects'>
           Projects
         </Link>
-        <Link className={`hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/cv' ? 'text-xl font-semibold' : ''}`} href='/cv'>
+        <Link onMouseEnter={playSound} className={`hover:ml-1 hover:text-xl hover:font-normal ease-in-out transition duration-500 transform ${currentPath === '/cv' ? 'text-xl font-semibold' : ''}`} href='/cv'>
           CV
         </Link>
       </ul>
