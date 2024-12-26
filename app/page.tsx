@@ -1,8 +1,6 @@
 'use client';
 
-import { useState } from 'react';
 import { Montserrat } from "next/font/google";
-import Instagram from "../public/instagram.svg";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
